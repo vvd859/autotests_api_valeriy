@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "title": "Client types",
+    "type": "object",
+    "properties": {
+        "id_client_type": {"type": "integer"},
+        "name": {"type": "string"},
+        "descr": {"type": "string"}
+    },
+    "required": ["id_client_type"]
+}

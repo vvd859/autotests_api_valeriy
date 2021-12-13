@@ -1,0 +1,10 @@
+{ 
+    "$schema": "http://json-schema.org/schema",
+    "title": "Packs",
+    "properties": {
+        "id_pack": {"type":"integer"},
+        "name": {"type": "string"},
+        "maping": {"type":"integer"}
+    },
+    "required": ["id_pack"]
+}

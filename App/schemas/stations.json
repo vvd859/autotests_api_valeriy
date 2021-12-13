@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "title": "Stations",
+    "properties": {
+        "id_station": {"type": "integer"},
+        "id_station_type": {"type": "integer"},
+        "name": {"type":"string"},
+        "note": {"type":"string"}
+    },
+    "required": ["id_station", "id_station_type"]
+}

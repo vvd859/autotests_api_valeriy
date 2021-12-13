@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "title": "Logs",
+    "properties": {
+        "id_log": {"type":"integer"},
+        "text": {"type":"string"},
+        "id_data": {"type":"integer"},
+        "date": {"type":"object", "default": "now()"}
+    },
+    "required": ["id_log", "id_data"]
+}

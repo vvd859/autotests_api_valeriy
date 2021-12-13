@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "title": "Files",
+    "properties": {
+        "id_file": { "type":"integer"},
+        "name": {"type":"string"},
+        "num": {"type":"integer"},
+        "date": {"type":"object", "default": "now()"}
+    },
+    "required": ["id_file"]
+}

@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "title": "Datas",
+    "properties": {
+        "id_data": {"type": "integer"},
+        "id_file": {"type": "integer"},
+        "dn": {"type": "integer"},
+        "lac": {"type": "integer"},
+        "tel": {"type": "integer"},
+        "lsk": {"type": "integer"},
+        "id_es": {"type": "integer"},
+        "id_event": {"type": "integer"},
+        "id_service": {"type": "integer"},
+        "date": {"type":"object"},
+        "username": {"type":"string"},
+        "id_station": {"type": "integer"},
+        "active": {"type":"boolean"},
+        "num": {"type": "integer"},
+        "comindex": {"type":"string"},
+        "comname": {"type":"string"},
+        "id_status": {"type": "integer"},
+        "kodonoff": {"type": "integer"},
+        "type_client": {"type": "integer"}
+    },
+    "required": ["id_data", "lsk"]
+    
+}

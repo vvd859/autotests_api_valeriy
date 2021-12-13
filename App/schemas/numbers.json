@@ -1,0 +1,13 @@
+{ "$schema": "http://json-schema.org/schema",
+    "title": "Numbers",
+    "properties": {
+        "id_number": {"type": "integer"},
+        "port": {"type":"string"},
+        "lac": {"type":"string"},
+        "tel": {"type":"string"},
+        "type": {"type":"string"},
+        "id_station": {"type": "integer"},
+        "date": {"type":"object", "default": "now()"}
+    },
+    "required": ["id_number", "id_station"]
+}

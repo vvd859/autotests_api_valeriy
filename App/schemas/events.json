@@ -1,0 +1,9 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "title": "Events",
+    "properties": {
+        "id_event" : {"type":"integer"},
+        "name": {"type":"string"}
+    },
+    "required": ["id_event"]
+}
