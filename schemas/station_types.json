@@ -4,6 +4,5 @@
     "properties": {
         "id_station_type":{"type":"integer"},
         "name": {"type":"string"}
-    },
-    "required": ["id_station_type"]
+    }
 }

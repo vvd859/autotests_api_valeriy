@@ -1,0 +1,40 @@
+version: "3.9"
+services:
+  db:
+    build:
+      context: ./DockerPg
+      dockerfile:  Dockerfile.pg
+    # image: postgres:12
+    environment:
+      - POSTGRES_PASSWORD=qweasdzxc
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    # volumes:
+    #   - c:\temp\ssssw:/var/lib/postgresql/data
+    ports:
+      - 9999:5432
+  
+  admin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=a@a.com
+      - PGADMIN_DEFAULT_PASSWORD=qweasdzxc
+    ports:
+      - 8080:80
+
+    depends_on:
+      - db
+
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile.app
+    ports:
+      - 5555:5000
+
+    depends_on:
+      - db
+
+# networks:
+#   default:
+#     # Use a custom driver
+#     driver: custom-driver-1

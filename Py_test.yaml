@@ -1,0 +1,83 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Valeriy API
+  description: Python test
+servers:
+  - url: https://virtserver.swaggerhub.com/vvd859/Valeriy_API/v1
+# basePath: /vvd859/Valeriy_API/v1
+
+paths:
+  '/StationType':
+    get:
+      summary: Return all station types
+      # produces:
+      #   - application/json
+      responses:
+        '200':
+          description: Just OK
+          content:
+            application/json:
+              schema:
+                # $ref: '#/definitions/StationTypes'
+                type: array
+                items:
+                  $ref: "#/components/schemas/StationTypes"
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id_station_type:
+                  type: integer
+                name:
+                  type: string
+                descr:
+                  type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id_station_type:
+                    type: integer
+                # type: array
+                # items:
+                #   $ref: "#/components/schemas/StationTypes"
+          #       type: array
+
+  # /Station:
+  #   get:
+  #     produces:
+  #       - application/json
+  #     responses:
+  #       200:
+  #         description: OK
+  #         schema:
+  #           $ref: '#/definitions/Stations'
+components:
+  schemas:
+    StationTypes:
+      type: object
+      properties:
+        id_station_type:
+          type: integer
+        name:
+          type: string
+        descr:
+          type: string
+    Stations:
+      type: object
+      properties: 
+        id_station:
+          type: integer
+        name: 
+          type: string
+        descr:
+          type: string
+
