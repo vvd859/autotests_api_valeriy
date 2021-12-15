@@ -20,24 +20,13 @@ SET default_tablespace = '';
 
 SET default_table_access_method = heap;
 
---
--- TOC entry 203 (class 1259 OID 16388)
--- Name: station_types; Type: TABLE; Schema: public; Owner: postgres
---
-
 CREATE TABLE public.station_types (
     id_station_type integer NOT NULL,
     name character varying,
     descr character varying
 );
 
-
 ALTER TABLE public.station_types OWNER TO postgres;
-
---
--- TOC entry 202 (class 1259 OID 16386)
--- Name: station_types_id_station_type_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
 
 CREATE SEQUENCE public.station_types_id_station_type_seq
     AS integer
@@ -47,37 +36,23 @@ CREATE SEQUENCE public.station_types_id_station_type_seq
     NO MAXVALUE
     CACHE 1;
 
-
 ALTER TABLE public.station_types_id_station_type_seq OWNER TO postgres;
-
---
--- TOC entry 2913 (class 0 OID 0)
--- Dependencies: 202
--- Name: station_types_id_station_type_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
 
 ALTER SEQUENCE public.station_types_id_station_type_seq OWNED BY public.station_types.id_station_type;
 
-
---
--- TOC entry 2778 (class 2604 OID 16391)
--- Name: station_types id_station_type; Type: DEFAULT; Schema: public; Owner: postgres
---
-
 ALTER TABLE ONLY public.station_types ALTER COLUMN id_station_type SET DEFAULT nextval('public.station_types_id_station_type_seq'::regclass);
 
+INSERT INTO public.station_types (id_station_type, name, descr) VALUES (1, 'SI2000', 'SI2000');
+INSERT INTO public.station_types (id_station_type, name, descr) VALUES (2, 'EWSD', NULL);
+INSERT INTO public.station_types (id_station_type, name, descr) VALUES (3, 'Kvant', NULL);
+INSERT INTO public.station_types (id_station_type, name, descr) VALUES (4, 'Analog', NULL);
+INSERT INTO public.station_types (id_station_type, name, descr) VALUES (5, 'SI3000', NULL);
 
---
--- TOC entry 2780 (class 2606 OID 16396)
--- Name: station_types station_types_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
+SELECT pg_catalog.setval('public.station_types_id_station_type_seq', 5, true);
+
+ALTER TABLE ONLY public.station_types
+    ADD CONSTRAINT station_types_name_name1_key UNIQUE (name) INCLUDE (name);
 
 ALTER TABLE ONLY public.station_types
     ADD CONSTRAINT station_types_pkey PRIMARY KEY (id_station_type);
 
-
--- Completed on 2021-12-15 09:21:09 UTC
-
---
--- PostgreSQL database dump complete
---

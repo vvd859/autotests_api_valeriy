@@ -1,5 +1,4 @@
 {
-    "$schema": "http://json-schema.org/schema",
     "title": "Station types",
     "properties": {
         "id_station_type":{"type":"integer"},

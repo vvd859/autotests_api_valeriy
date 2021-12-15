@@ -1,7 +1,7 @@
 # import jsonschema
 import pytest
 import json
-from App.helpers.validSchema import isValidJSON
+from helpers.validSchema import isValidJSON
 
 def test_valid_station():
     _data = {
@@ -10,7 +10,7 @@ def test_valid_station():
         "name": "name",
         "note": "note"
         }
-    with open("App/schemas/stations.json", "r") as _f:
+    with open("schemas/stations.json", "r") as _f:
         _schema = json.load(_f)
 
     print (_schema)
