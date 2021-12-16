@@ -5,3 +5,4 @@ conn = psycopg2.connect(
     dbname="nvgr",
     user="vvd",
     password="qweasdzxc")
+conn.set_client_encoding('UTF8')

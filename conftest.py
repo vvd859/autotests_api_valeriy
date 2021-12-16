@@ -1,6 +1,6 @@
 import pytest
 
-from applications import Application
+from application import Application
 
 fixture = Application()
 
