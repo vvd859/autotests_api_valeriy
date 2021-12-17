@@ -1,4 +1,6 @@
 import pytest
+import allure
+
 
 def test_get_data(base_fixture):
     session_token = base_fixture.configs.token
@@ -9,9 +11,12 @@ def test_get_data(base_fixture):
 
 @pytest.mark.parametrize("_id", [1, 2, 3])
 def test_get_data_id(base_fixture, _id):
-    response = base_fixture.api.station_types.get_station_types_id(_id)
-    print(response)
-    assert response.status_code == 200
+    with allure.step("GET id_station_type."):
+        response = base_fixture.api.station_types.get_station_types_id(_id)
+        print(response)
+        resp_dict =response.json()
+    with allure.step("Проверка."):
+        assert response.status_code == 200
 
 
 # @pytest.mark.parametrize("_name, _descr", [("A1", "A1"), ("B1", "B1"), ("C1", "C1")])
