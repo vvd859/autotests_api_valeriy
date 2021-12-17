@@ -43,10 +43,10 @@ ALTER SEQUENCE public.station_types_id_station_type_seq OWNED BY public.station_
 ALTER TABLE ONLY public.station_types ALTER COLUMN id_station_type SET DEFAULT nextval('public.station_types_id_station_type_seq'::regclass);
 
 INSERT INTO public.station_types (id_station_type, name, descr) VALUES (1, 'SI2000', 'SI2000');
-INSERT INTO public.station_types (id_station_type, name, descr) VALUES (2, 'EWSD', NULL);
-INSERT INTO public.station_types (id_station_type, name, descr) VALUES (3, 'Kvant', NULL);
-INSERT INTO public.station_types (id_station_type, name, descr) VALUES (4, 'Analog', NULL);
-INSERT INTO public.station_types (id_station_type, name, descr) VALUES (5, 'SI3000', NULL);
+INSERT INTO public.station_types (id_station_type, name, descr) VALUES (2, 'EWSD', 'EWSD');
+INSERT INTO public.station_types (id_station_type, name, descr) VALUES (3, 'Kvant', 'Kvant');
+INSERT INTO public.station_types (id_station_type, name, descr) VALUES (4, 'Analog', 'Analog');
+INSERT INTO public.station_types (id_station_type, name, descr) VALUES (5, 'SI3000', 'SI3000');
 
 SELECT pg_catalog.setval('public.station_types_id_station_type_seq', 5, true);
 
