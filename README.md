@@ -17,5 +17,5 @@ Applilcaion:
 Postman:
 * PyTest.postman_collection.json
 
-Testing:
-Пример - pytest -ra -q -v tests/test_validation_schemas.py
+NETWORK 5:
+7. Пример - pytest -ra -q -v tests/test_validation_schemas.py
