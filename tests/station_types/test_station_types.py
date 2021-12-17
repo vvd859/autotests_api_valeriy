@@ -1,6 +1,7 @@
 import pytest
 import allure
-
+import json
+from helpers.validSchema import isValidJSON
 
 def test_get_data(base_fixture):
     session_token = base_fixture.configs.token
@@ -14,10 +15,15 @@ def test_get_data_id(base_fixture, _id):
     with allure.step("GET id_station_type."):
         response = base_fixture.api.station_types.get_station_types_id(_id)
         print(response)
-        resp_dict =response.json()
+        resp_dict = response.json()
     with allure.step("Проверка."):
         assert response.status_code == 200
 
+        with open("schemas/station_types.json", "r") as _f:
+            _schema = json.load(_f)
+
+        check_res = isValidJSON(resp_dict[0], _schema)
+        assert check_res is True, "Error"
 
 # @pytest.mark.parametrize("_name, _descr", [("A1", "A1"), ("B1", "B1"), ("C1", "C1")])
 # def test_post_data(base_fixture, _name, _descr):
