@@ -5,7 +5,7 @@ import json
 from flask import Flask, Blueprint, jsonify, request
 # from werkzeug.wrappers import response
 from . import api
-from db import conn
+from App.db import conn
 # from ..helpers import validSchema 
 
 @api.route("/Station/<int:id_station>", methods=["GET"])

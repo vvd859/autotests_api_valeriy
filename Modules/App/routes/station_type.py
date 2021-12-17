@@ -6,7 +6,7 @@ import psycopg2
 from flask import Flask, Blueprint, jsonify, request
 # from werkzeug.wrappers import response
 from . import api
-from db import conn
+from App.db import conn
 # from ..helpers import validSchema 
 
 @api.route("/StationType/<int:id_station_type>", methods=["GET"])

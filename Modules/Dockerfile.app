@@ -2,7 +2,7 @@ FROM python:3.9-slim
 
 WORKDIR /opt/app
 COPY App App
-COPY db db
+# COPY db db
 COPY main.py main.py
 COPY requirements.txt requirements.txt
 

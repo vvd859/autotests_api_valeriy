@@ -1,6 +1,6 @@
 from flask import Flask, Blueprint
 from .routes import api
-from db import conn
+from .db import conn
 
 app = Flask(__name__)
 app.secret_key = "Trcrte"

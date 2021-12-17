@@ -6,7 +6,7 @@ from helpers.validSchema import isValidJSON
 def test_get_data(base_fixture):
     session_token = base_fixture.configs.token
     response = base_fixture.api.station_types.get_station_types()
-
+    
     check_resp = base_fixture.checkers.station_types
     assert response.status_code == 200
 
