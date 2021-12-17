@@ -1,7 +1,12 @@
 {
+    "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Station types",
     "properties": {
         "id_station_type":{"type":"integer"},
-        "name": {"type":"string"}
-    }
+        "name": {"type":"string"},
+        "descr": {"type": "string"}
+    },
+    "required":[
+        "name"
+    ]
 }
