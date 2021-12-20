@@ -52,7 +52,7 @@ def StationPost():
         return f"fdgsdfgs\n{res}"
     except Exception as Err:
         conn.rollback()
-        return f"Error!!! {Err}"
+        return f"Error!!! {Err}", 411
     
 @api.route("/Station/<int:id_station>/<int:id_station_type>", methods=["PUT"])
 def StationPut(id_station, id_station_type):
@@ -69,7 +69,7 @@ def StationPut(id_station, id_station_type):
     except Exception as Err:
         print(cur.query)
         conn.rollback()
-        return f"Error!!! {Err}"
+        return f"Error!!! {Err}", 412
 
 @api.route("/Station/<int:id_station>", methods=["DELETE"])
 def StationDelete(id_station):
@@ -77,14 +77,12 @@ def StationDelete(id_station):
     # with open("App/schemas/station_types.json", "r") as _f:
     #     _schema = json.load(_f)
 
-    _data = request.get_json()
     try:
         cur = conn.cursor()
-        res = cur.execute(f"delete from stations where id_station = {id_station}")
+        cur.execute(f"delete from station_types where id_station_type = {id_station}  returning  id_station")
+        cur.fetchone()[0]
         conn.commit()
-        return f"fdgsdfgs\n{res}"
+        return f"Ok"
     except Exception as Err:
-        print(cur.query)
         conn.rollback()
-        return f"Error!!! {Err}"
-
+        return f"Error! No data.", 414

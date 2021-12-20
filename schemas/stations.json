@@ -7,5 +7,5 @@
         "name": {"type":"string"},
         "note": {"type":"string"}
     },
-    "required": ["id_station", "id_station_type"]
+    "required": ["name"]
 }
