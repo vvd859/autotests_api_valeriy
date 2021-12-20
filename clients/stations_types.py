@@ -64,5 +64,5 @@ class ApiStationTypes:
         headers = copy.deepcopy(self.default_headers)
         # headers['Authorization'] = token
 
-        response = requests.put(url, headers=headers)
+        response = requests.delete(url, headers=headers)
         return response

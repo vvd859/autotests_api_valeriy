@@ -1,7 +1,7 @@
 import pytest
 import allure
 import json
-from helpers.validSchema import isValidJSON
+from helpers import isValidJSON
 
 def test_get_data(base_fixture):
     session_token = base_fixture.configs.token
@@ -25,19 +25,19 @@ def test_get_data_id(base_fixture, _id):
         check_res = isValidJSON(resp_dict[0], _schema)
         assert check_res is True, "Error"
 
-@pytest.mark.parametrize("_name, _descr", [("A1", "A1"), ("B1", "B1"), ("C1", "C1")])
+@pytest.mark.parametrize("_name, _descr", [("Q1A1", "A1"), ("B1", "B1"), ("C1", "C1")])
 def test_post_data(base_fixture, _name, _descr):
     response = base_fixture.api.station_types.post_station_types(_name, _descr)
-    assert response.status_code == 200
+    assert response.status_code == 200, response.text
 
-# @pytest.mark.parametrize("_id, _name, _descr", [(1, "Z1", ""), (2, "Y1", ""), (3, "X1", "")])
-# def test_put_data(base_fixture, _id, _name, _descr):
-#     response = base_fixture.api.station_types.put_station_types_id(_id, _name, _descr)
-#     print(response)
-#     assert response.status_code == 200
+@pytest.mark.parametrize("_id, _name, _descr", [(1, "Z1", ""), (2, "Y1", ""), (3, "X1", "")])
+def test_put_data(base_fixture, _id, _name, _descr):
+    response = base_fixture.api.station_types.put_station_types_id(_id, _name, _descr)
+    print(response)
+    assert response.status_code == 200, response.text
 
-# @pytest.mark.parametrize("_id", [1, 2, 3])
-# def test_delete_data(base_fixture, _id):
-#     response = base_fixture.api.station_types.delete_station_types_id(_id)
-#     print(response)
-#     assert response.status_code == 200
+@pytest.mark.parametrize("_id", [1, 2, 3])
+def test_delete_data(base_fixture, _id):
+    response = base_fixture.api.station_types.delete_station_types_id(_id)
+    print(response)
+    assert response.status_code == 200, response.text

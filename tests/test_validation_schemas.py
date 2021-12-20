@@ -1,7 +1,7 @@
 # import jsonschema
 import pytest
 import json
-from helpers.validSchema import isValidJSON
+from helpers import isValidJSON
 
 def test_valid_station():
     _data = {

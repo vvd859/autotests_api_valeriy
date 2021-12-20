@@ -60,7 +60,6 @@ def StationTypePut(id_station_type):
         conn.rollback()
         return f"Error!!! No data.", 413
 
-
 @api.route("/StationType/<int:id_station_type>", methods=["DELETE"])
 def StationTypeDelete(id_station_type):
     print(id_station_type)

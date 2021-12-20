@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/schema",
+    "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Statuses",
     "properties": {
         "id_status": {"type":"integer"},
