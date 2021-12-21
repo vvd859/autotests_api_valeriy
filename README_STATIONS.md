@@ -12,4 +12,9 @@ http://localhost:5555/api/Station/{idStation}/{idStationType}
 
 [DELETE]
 http://localhost:5555/api/Station/{idStation}
+
+[GET]
+    params:
+        name
+http://localhost:5555/api/Station/FinderStationName
 ```
