@@ -76,7 +76,9 @@ class DisplayablePath(object):
         return ''.join(reversed(parts))
 
 h = open("README_STRUCTURE.md", "w", encoding='utf-8')
+h.write('```\n')
 paths = DisplayablePath.make_tree(Path('.'), criteria=lambda path: True if path.name not in ('.git',  '__pycache__', 'venv', '.pytest_cache', '.gitignore', '.vscode') else False)
 for path in paths:
     print(path.displayable())
     h.write(f"{path.displayable()}\n")
+h.write('```\n')
