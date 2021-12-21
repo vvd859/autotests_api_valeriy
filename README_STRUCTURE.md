@@ -1,6 +1,6 @@
---/
---├── application.py
---├── checkers/
+/
+├── application.py
+├── checkers/
 │   ├── checkers_helper.py
 │   ├── station_types.py
 │   └── stations.py
