@@ -1,3 +1,4 @@
+```
 [GET]
 http://localhost:5555/api/StationType
 http://localhost:5555/api/StationType/{idStationType}
@@ -10,4 +11,4 @@ http://localhost:5555/api/StationType/{idStationType}
 
 [DELETE]
 http://localhost:5555/api/StationType/{idStationType}
-
+```
