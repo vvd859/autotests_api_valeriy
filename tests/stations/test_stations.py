@@ -12,7 +12,7 @@ def test_get_data(base_fixture):
     check_resp = base_fixture.checkers.stations
     assert response.status_code == 200
 
-@pytest.mark.parametrize("_id", [5, 2, 8])
+@pytest.mark.parametrize("_id", [1, 2, 3])
 def test_get_data_id(base_fixture, _id):
     with allure.step("GET id_station_type."):
         response = base_fixture.api.stations.get_stations_id(_id)
@@ -27,7 +27,7 @@ def test_get_data_id(base_fixture, _id):
         check_res = isValidJSON(resp_dict[0], _schema)
         assert check_res is True, "Error"
 
-@pytest.mark.parametrize("_id_station_type, _name, _descr", [(12, "ZA1", "A1"), (22, "XB1", "B1"), (18, "EC1", "C1")])
+@pytest.mark.parametrize("_id_station_type, _name, _descr", [(1, "ZA1", "A1"), (22, "XB1", "B1"), (18, "EC1", "C1")])
 def test_post_data(base_fixture, _id_station_type, _name, _descr):
     response = base_fixture.api.stations.post_stations(_id_station_type, _name, _descr)
     assert response.status_code == 200, response.text
@@ -43,3 +43,10 @@ def test_delete_data(base_fixture, _id):
     response = base_fixture.api.stations.delete_stations_id(_id)
     print(response)
     assert response.status_code == 200, response.text
+
+@pytest.mark.parametrize("_name", ["EWSD", "SI", "KVA"])
+def test_finder_name(base_fixture, _name):
+    response = base_fixture.api.stations.finder_stations_name(_name)
+    print(response)
+    assert response.status_code == 200, response.text
+    

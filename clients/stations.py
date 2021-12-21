@@ -67,3 +67,13 @@ class ApiStations:
 
         response = requests.delete(url, headers=headers)
         return response
+
+    def finder_stations_name(self, _name):
+        api_method = f"/api/Station/FinderStationName"
+        url = self.url + api_method
+
+        headers = copy.deepcopy(self.default_headers)
+        # headers['Authorization'] = token
+
+        response = requests.get(url, headers=headers, params={"name":_name})
+        return response

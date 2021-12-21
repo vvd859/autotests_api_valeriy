@@ -93,3 +93,18 @@ def StationDelete(id_station):
     except Exception as Err:
         conn.rollback()
         return f"Error! No data.", 414
+
+@api.route("/Station/FinderStationName", methods=["GET"])
+def StationFinderStationName():
+    _name = request.args.get("name")
+    try:
+        cur = conn.cursor()
+        cur.execute(f"select * from stations where name like '%{_name}%'")
+        # print(cur.query)
+        res = cur.fetchall()
+        _d = [i[0] for i in cur.description]
+        _result = [dict(zip(_d, i)) for i in res]
+        return jsonify(_result)
+    except Exception as Err:
+        conn.rollback()
+        return f"Error! No data.", 415
