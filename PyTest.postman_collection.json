@@ -49,6 +49,39 @@
 					"response": []
 				},
 				{
+					"name": "localhost:5555/api/Station/FinderStationName",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:5555/api/Station/FinderStationName?name=SI",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"Station",
+								"FinderStationName"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "SI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "localhost:5555/api/Station/{idStation}",
 					"request": {
 						"method": "GET",
@@ -97,7 +130,7 @@
 					"response": []
 				},
 				{
-					"name": "localhost:5555/api/Station/{idStation}",
+					"name": "localhost:5555/api/Station/{idStation}/{idStationType}",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -211,7 +244,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Kvant\",\r\n    \"descr\": \"note\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Analog\",\r\n    \"descr\": \"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -247,7 +280,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5555/api/StationType/5",
+							"raw": "localhost:5555/api/StationType/4",
 							"host": [
 								"localhost"
 							],
@@ -255,7 +288,7 @@
 							"path": [
 								"api",
 								"StationType",
-								"5"
+								"4"
 							],
 							"query": [
 								{
